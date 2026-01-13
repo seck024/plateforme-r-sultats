@@ -13,10 +13,6 @@ return new class extends Migration
     {
         Schema::create('resultats', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-        });
-        Schema::create('resultats', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('etudiant_id')->constrained()->cascadeOnDelete();
             $table->enum('statut', ['admis', 'refuse', 'rattrapage']);
             $table->boolean('publie')->default(false);

@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('diplome_filiere', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-        });
-        Schema::create('diplome_filiere', function (Blueprint $table) {
             $table->foreignId('filiere_id')->constrained()->cascadeOnDelete();
             $table->foreignId('diplome_id')->constrained()->cascadeOnDelete();
         });

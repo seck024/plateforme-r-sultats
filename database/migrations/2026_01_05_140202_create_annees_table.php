@@ -13,10 +13,6 @@ return new class extends Migration
     {
         Schema::create('annees', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-        });
-        Schema::create('annees', function (Blueprint $table) {
-            $table->id();
             $table->year('annee');
             $table->foreignId('diplome_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
