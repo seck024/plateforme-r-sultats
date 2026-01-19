@@ -14,6 +14,7 @@ class Filiere extends Model
 
     public function diplomes()
     {
-        return $this->belongsToMany(Diplome::class);
+        return $this->hasMany(Diplome::class);
     }
+
 }

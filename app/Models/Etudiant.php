@@ -7,15 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etudiant extends Model
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'numero_etudiant',
-        'nom',
-        'prenom',
-        'diplome_id',
-        'annee_id'
-    ];
+    protected $fillable = ['matricule', 'nom', 'prenom', 'diplome_id'];
 
     public function diplome()
     {

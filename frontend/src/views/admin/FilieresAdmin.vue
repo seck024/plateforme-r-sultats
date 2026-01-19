@@ -32,7 +32,8 @@ onMounted(chargerFilieres);
         <h3>Liste des filières</h3>
         <ul>
             <li v-for="f in filieres" :key="f.id">
-                {{ f.nom }}
+                {{ f.nom }} (ID Filière :{{ f.id }})
+
             </li>
         </ul>
     </div>

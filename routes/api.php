@@ -31,3 +31,16 @@ use App\Http\Controllers\AnneeController;
 
 Route::get('/filieres', [FiliereController::class, 'index']);
 Route::post('/filieres', [FiliereController::class, 'store']);
+
+Route::apiResource('diplomes', DiplomeController::class);
+Route::apiResource('annees', AnneeController::class);
+
+
+use App\Http\Controllers\Api\EtudiantController;
+
+Route::get('/etudiants', [EtudiantController::class, 'index']);
+Route::post('/etudiants', [EtudiantController::class, 'store']);
+Route::get('/etudiants/{id}', [EtudiantController::class, 'show']);
+Route::put('/etudiants/{id}', [EtudiantController::class, 'update']);
+Route::delete('/etudiants/{id}', [EtudiantController::class, 'destroy']);
+

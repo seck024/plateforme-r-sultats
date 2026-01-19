@@ -6,9 +6,11 @@ const routes = [
         path: "/admin/filieres",
         component: FilieresAdmin,
     },
+
 ];
 
 export default createRouter({
     history: createWebHistory(),
     routes,
 });
+
