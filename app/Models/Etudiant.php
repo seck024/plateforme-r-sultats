@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etudiant extends Model
 {
-    protected $fillable = ['matricule', 'nom', 'prenom', 'diplome_id'];
+    protected $fillable = [
+        'numero_etudiant',
+        'nom',
+        'prenom',
+        'diplome_id',
+        'annee_id'
+    ];
+
 
     public function diplome()
     {
