@@ -26,8 +26,9 @@ class Etudiant extends Model
         return $this->belongsTo(Annee::class);
     }
 
-    public function resultat()
+    public function resultats()
     {
-        return $this->hasOne(Resultat::class);
+        return $this->hasMany(Resultat::class);
     }
+
 }

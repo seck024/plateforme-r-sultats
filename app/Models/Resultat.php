@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resultat extends Model
 {
-    use HasFactory;
-
-    protected $fillable = ['etudiant_id', 'statut', 'publie'];
+    protected $fillable = [
+        'etudiant_id',
+        'annee_id',
+        'statut',
+        'valide',
+        'publie'
+    ];
 
     public function etudiant()
     {

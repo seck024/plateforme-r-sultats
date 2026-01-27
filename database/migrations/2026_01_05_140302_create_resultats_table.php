@@ -13,11 +13,19 @@ return new class extends Migration
     {
         Schema::create('resultats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('etudiant_id')->constrained()->cascadeOnDelete();
-            $table->enum('statut', ['admis', 'refuse', 'rattrapage']);
+
+            $table->foreignId('etudiant_id')->constrained();
+            $table->foreignId('annee_id')->constrained();
+
+            $table->enum('statut', ['admis', 'rattrapage', 'refuse']);
+
+            $table->boolean('valide')->default(false);
             $table->boolean('publie')->default(false);
+
             $table->timestamps();
         });
+
+
 
     }
 
