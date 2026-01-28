@@ -1,17 +1,29 @@
 import { createRouter, createWebHistory } from "vue-router";
-import FilieresAdmin from "../views/admin/FilieresAdmin.vue";
+import LoginAdmin from "../views/admin/LoginAdmin.vue";
+import AdminDashboard from "../views/App.vue";
+import App from "@/App.vue";
 
 const routes = [
+    { path: "/login", component: LoginAdmin },
+
     {
-        path: "/admin/filieres",
-        component: FilieresAdmin,
-
-    },
-
+        path: "/admin",
+        component: App,
+        meta: { requiresAuth: true }
+    }
 ];
 
-export default createRouter({
+const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes
 });
 
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth) {
+        const admin = localStorage.getItem("admin");
+        if (!admin) return next("/login");
+    }
+    next();
+});
+
+export default router;

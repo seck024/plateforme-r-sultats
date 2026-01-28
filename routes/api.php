@@ -7,6 +7,11 @@ use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\AnneeController;
 use App\Http\Controllers\Api\EtudiantController;
 use App\Http\Controllers\Api\ResultatController;
+use App\Http\Controllers\Api\AdminAuthController;
+
+Route::post('admin/login', [AdminAuthController::class, 'login']);
+Route::post('admin/logout', [AdminAuthController::class, 'logout']);
+Route::get('admin/me', [AdminAuthController::class, 'me']);
 
 
 /*
