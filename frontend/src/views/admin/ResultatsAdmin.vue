@@ -21,7 +21,7 @@
         <!-- LISTE -->
         <table border="1" cellpadding="8">
             <tr>
-                <th>ID</th>
+                <th>Numero etudiant</th>
                 <th>Étudiant</th>
                 <th>Statut</th>
                 <th>Validé</th>
@@ -29,7 +29,7 @@
             </tr>
 
             <tr v-for="r in resultats" :key="r.id">
-                <td>{{ r.id }}</td>
+                <td>{{ r.etudiant?.numero_etudiant }}</td>
 
                 <td>
                     {{ r.etudiant?.nom }} {{ r.etudiant?.prenom }}
@@ -58,6 +58,52 @@
         </table>
     </div>
 </template>
+<style>
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f1f5f9;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-edit {
+    background: #3b82f6;
+    color: white;
+}
+
+</style>
 
 <script>
 export default {
