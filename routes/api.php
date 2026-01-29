@@ -13,6 +13,7 @@ Route::post('admin/login', [AdminAuthController::class, 'login']);
 Route::post('admin/logout', [AdminAuthController::class, 'logout']);
 Route::get('admin/me', [AdminAuthController::class, 'me']);
 
+Route::delete('/filieres/{id}', [FiliereController::class, 'destroy']);
 
 /*
 |--------------------------------------------------------------------------
