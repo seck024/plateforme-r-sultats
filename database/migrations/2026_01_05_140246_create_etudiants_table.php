@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('numero_etudiant')->unique();
             $table->string('nom');
             $table->string('prenom');
-            $table->foreignId('diplome_id')->constrained();
+            $table->foreignId('diplome_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
             $table->foreignId('annee_id')->constrained();
             $table->timestamps();
         });

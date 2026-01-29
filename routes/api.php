@@ -3,17 +3,21 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FiliereController;
-use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\AnneeController;
 use App\Http\Controllers\Api\EtudiantController;
 use App\Http\Controllers\Api\ResultatController;
 use App\Http\Controllers\Api\AdminAuthController;
+use App\Http\Controllers\Api\DiplomeController;
+
 
 Route::post('admin/login', [AdminAuthController::class, 'login']);
 Route::post('admin/logout', [AdminAuthController::class, 'logout']);
 Route::get('admin/me', [AdminAuthController::class, 'me']);
-
+/*les route pour pouvoir supprimer */
 Route::delete('/filieres/{id}', [FiliereController::class, 'destroy']);
+Route::get('/diplomes', [DiplomeController::class, 'index']);
+Route::post('/diplomes', [DiplomeController::class, 'store']);
+
 
 /*
 |--------------------------------------------------------------------------
